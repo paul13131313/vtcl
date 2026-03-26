@@ -273,7 +273,7 @@ export default function Home() {
           {/* タイトル（1行） + ・・ */}
           <div style={{ position: "relative" }}>
             <h2 className="font-baoli" style={{ fontSize: 55, fontWeight: 400, lineHeight: "1em", whiteSpace: "nowrap" }}>君はどのあざ？</h2>
-            <span className="font-baoli" style={{ fontSize: 46, fontWeight: 400, letterSpacing: "0.2em", position: "absolute", left: 205, top: -14, color: "#000" }}>・・</span>
+            <span className="font-baoli" style={{ fontSize: 46, fontWeight: 400, letterSpacing: "0.2em", position: "absolute", left: "60%", top: -14, color: "#000" }}>・・</span>
           </div>
           <p style={{ fontSize: 20, fontWeight: 500, lineHeight: "1.5em", letterSpacing: "0.03em", marginTop: 16 }}>ネルソンの生業はライターであり、沖永良部にルーツをもつ奄美群島出身者でもある。そのルーツを活かして郷土を継承していく活動に取り組んでおり、そのひとつが、この「あざシール」である。あざとは「字」と書き、町内の単位のひとつ。出身県や出身学校に愛のある人はたくさんいると思うが、字に愛のある人もたくさんいる。その気持ちを表明できるのがあざシールなのだ。あなたにとっての字は何にあたるのだろうか。筆者にとっての字は、学生時代の人力飛行機サークルだろうなあ、などと思いました。</p>
         </div>
@@ -284,17 +284,15 @@ export default function Home() {
         <h2 style={{ fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: 22, fontWeight: 500, color: "#fff", letterSpacing: "0.3em", lineHeight: "1.8em" }}>映像でふりかえる<br />沖永良部旅</h2>
       </section>
 
-      {/* ━━━ 13. VIDEO SECTION (縦長・画面いっぱい) ━━━ */}
+      {/* ━━━ 13. VIDEO SECTION (縦長・タップで再生) ━━━ */}
       <section className="relative" style={{ width: "100%", height: 700, overflow: "hidden" }}>
-        {/* Play triangle icon overlaid on video */}
-        <div className="absolute top-4 left-0 right-0 text-center" style={{ zIndex: 2, pointerEvents: "none" }}>
-          <svg width="48" height="48" viewBox="0 0 48 48"><polygon points="14,8 40,24 14,40" fill="white" /></svg>
-        </div>
         <video
           ref={videoRef}
           src="/videos/oke3.mp4"
-          autoPlay muted loop playsInline
-          style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
+          muted loop playsInline
+          poster=""
+          onClick={() => { if (videoRef.current) { if (videoRef.current.paused) { videoRef.current.play(); } else { videoRef.current.pause(); } } }}
+          style={{ width: "100%", height: "100%", display: "block", objectFit: "cover", cursor: "pointer" }}
         />
         <button onClick={toggleMute} className="absolute bottom-4 right-4 bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center text-sm backdrop-blur-sm" style={{ zIndex: 2 }} aria-label={isMuted ? "音声をオンにする" : "音声をオフにする"}>
           {isMuted ? "\u{1F507}" : "\u{1F50A}"}
@@ -330,17 +328,17 @@ export default function Home() {
       </section>
 
       {/* ━━━ 15. 編集後記 (水色背景 + 上部に波線) ━━━ */}
-      <div style={{ background: "#77DBF1" }}>
+      <section style={{ background: "#77DBF1", padding: "0 0 56px" }}>
         <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none">
           <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V0H0Z" fill="white" />
         </svg>
-      </div>
-      <section style={{ background: "#77DBF1", padding: "48px 36px 56px" }}>
+        <div style={{ padding: "48px 36px 0" }}>
         <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
         <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
           縦型スクロールの形式で、画像も映像もテキストも楽しめればいいのに。という思いつきでつくってみたら、なんだか楽しかったので、またやるかもしれない。旅の時とか、登山の時とか。本編は、いわゆるガイドブック的なものと情報がかぶるので、コラムの方が楽しいのもまた発見であった。またいつか、どこかでお会いしましょう。
         </p>
         <p className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em", textAlign: "right", marginTop: 32 }}>Paul.</p>
+        </div>
       </section>
 
       {/* ━━━ FOOTER ━━━ */}

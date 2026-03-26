@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="ja" className={notoSansJP.variable}>
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=Zen+Kaku+Gothic+New:wght@500&family=Zen+Kaku+Gothic+Antique:wght@300;400;500&family=Balthazar&family=Amatica+SC:wght@400;700&family=Barlow+Semi+Condensed:wght@400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=Zen+Kaku+Gothic+New:wght@500&family=Zen+Kaku+Gothic+Antique:wght@300;400;500&family=Balthazar&family=Amatica+SC:wght@400;700&family=Barlow+Semi+Condensed:wght@400&family=Shippori+Mincho:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
       </head>
