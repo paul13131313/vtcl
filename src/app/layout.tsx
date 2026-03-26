@@ -17,6 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vtcl.vercel.app"),
   title: "VTCL — Vertical Magazine No.1 沖永良部",
   description:
     "写真・文章・動画がシームレスに一体化する縦スクロール型Webマガジン。第1号は鹿児島県沖永良部島。",
