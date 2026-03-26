@@ -46,6 +46,9 @@ const spotPhotos = [
 
 
 export default function Home() {
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [pw, setPw] = useState("");
+  const [pwError, setPwError] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -61,6 +64,30 @@ export default function Home() {
   const bodyText = { fontSize: 20, fontWeight: 300 as const, lineHeight: "2.3em" };
   const headingText = { fontSize: 22, fontWeight: 500 as const, lineHeight: "2.09em" };
   const caveText = { fontFamily: "'Barlow Semi Condensed', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400 as const, lineHeight: "1.79em", letterSpacing: "0.15em" };
+
+  /* パスワード画面 */
+  if (!isUnlocked) {
+    return (
+      <div className="max-w-[393px] mx-auto bg-black flex flex-col items-center justify-center" style={{ fontFamily: "'Noto Sans JP', sans-serif", minHeight: "100dvh" }}>
+        <h1 className="text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 80, fontWeight: 400, fontVariationSettings: "'opsz' 100", letterSpacing: "0.05em" }}>VTCL</h1>
+        <p className="text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 14, fontWeight: 400, fontVariationSettings: "'opsz' 100", marginTop: 4, opacity: 0.6 }}>VerticaL Magazine</p>
+        <form
+          onSubmit={(e) => { e.preventDefault(); if (pw === "yamada") { setIsUnlocked(true); setPwError(false); } else { setPwError(true); } }}
+          style={{ marginTop: 48, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}
+        >
+          <input
+            type="password"
+            value={pw}
+            onChange={(e) => { setPw(e.target.value); setPwError(false); }}
+            placeholder="password"
+            style={{ width: 200, padding: "10px 16px", fontSize: 14, background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.3)", borderRadius: 4, color: "#fff", textAlign: "center", outline: "none" }}
+          />
+          <button type="submit" style={{ width: 200, padding: "10px 16px", fontSize: 14, background: "#fff", color: "#000", border: "none", borderRadius: 4, cursor: "pointer", fontWeight: 500 }}>Enter</button>
+          {pwError && <p style={{ color: "#ff6b6b", fontSize: 12, marginTop: -8 }}>パスワードが違います</p>}
+        </form>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-[393px] mx-auto bg-white overflow-hidden" style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
