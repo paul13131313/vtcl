@@ -311,19 +311,20 @@ export default function Home() {
         <div style={{ ...bodyText, padding: "32px 36px" }}>
           <p>そして、もはやこれくらいじゃ驚かない、存命の人物の銅像である。旧ソ連圏を旅した時によく見たなあ。学生運動や組合活動に熱心だった人が島に集まるという話を聞き、何かを過剰に接続したくなったのであった。やっぱりまた来るかもしれない</p>
         </div>
-        {/* ━━━ 15. 編集後記 — 波はSVG内に両色描画、背景色はdivではなく直後から ━━━ */}
-        <svg viewBox="0 0 393 40" className="w-full block" preserveAspectRatio="none" overflow="visible">
-          <rect x="0" y="0" width="393" height="42" fill="#77DBF1" />
-          <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V-2H0Z" fill="white" />
-        </svg>
-        <div style={{ background: "#77DBF1", padding: "48px 36px 0" }}>
-          <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
-          <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
-            縦型スクロールの形式で、画像も映像もテキストも楽しめればいいのに。という思いつきでつくってみたら、なんだか楽しかったので、またやるかもしれない。旅の時とか、登山の時とか。本編は、いわゆるガイドブック的なものと情報がかぶるので、コラムの方が楽しいのもまた発見であった。またいつか、どこかでお会いしましょう。
-          </p>
-          <p className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em", textAlign: "right", marginTop: 32 }}>Paul.</p>
+        {/* ━━━ 15. 編集後記 — CSS background-imageで波を描画、HTML要素の境界ゼロ ━━━ */}
+        <div style={{
+          background: `#77DBF1 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 393 40' preserveAspectRatio='none'%3E%3Cpath d='M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V0H0Z' fill='white'/%3E%3C/svg%3E") top center/100% 40px no-repeat`,
+          paddingTop: 80,
+          paddingBottom: 56
+        }}>
+          <div style={{ padding: "0 36px" }}>
+            <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
+            <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
+              縦型スクロールの形式で、画像も映像もテキストも楽しめればいいのに。という思いつきでつくってみたら、なんだか楽しかったので、またやるかもしれない。旅の時とか、登山の時とか。本編は、いわゆるガイドブック的なものと情報がかぶるので、コラムの方が楽しいのもまた発見であった。またいつか、どこかでお会いしましょう。
+            </p>
+            <p className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em", textAlign: "right", marginTop: 32 }}>Paul.</p>
+          </div>
         </div>
-        <div style={{ background: "#77DBF1", height: 56 }} />
       </section>
 
       {/* ━━━ FOOTER ━━━ */}
