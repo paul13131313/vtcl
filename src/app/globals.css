@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 縦書きユーティリティ */
+.vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* ギャラリースクロール */
+.gallery-scroll {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.gallery-scroll::-webkit-scrollbar {
+  display: none;
+}
+.gallery-scroll > * {
+  scroll-snap-align: start;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Font family utilities */
+.font-baoli {
+  font-family: "Baoli SC", "Baoli TC", cursive;
+}
+.font-imbue {
+  font-family: "Imbue", serif;
+}
+.font-zen {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+}
+.font-balthazar {
+  font-family: "Balthazar", serif;
+}
+.font-amatica {
+  font-family: "Amatica SC", cursive;
+}
+.font-barlow {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
