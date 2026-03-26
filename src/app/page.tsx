@@ -104,10 +104,10 @@ export default function Home() {
         </div>
         {/* VTCL — レスポンシブフォントサイズ、センタリングで左右余白均等 */}
         <h1 className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: "min(271px, 68.7vw)", fontWeight: 400, left: 0, right: 0, top: 1, lineHeight: "1.2em", textAlign: "center", fontVariationSettings: "'opsz' 100" }}>VTCL</h1>
-        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 28, top: 37, fontVariationSettings: "'opsz' 100" }}>2026</span>
-        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, right: 28, top: 37, fontVariationSettings: "'opsz' 100" }}>4</span>
-        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 28, top: 257, fontVariationSettings: "'opsz' 100" }}>No.1</span>
-        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 28, right: 28, top: 257, textAlign: "right", fontVariationSettings: "'opsz' 100" }}>VerticaL Magazine</span>
+        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: "6.5%", top: 27, fontVariationSettings: "'opsz' 100" }}>2026</span>
+        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, right: "6.5%", top: 27, fontVariationSettings: "'opsz' 100" }}>4</span>
+        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: "6.5%", top: 248, fontVariationSettings: "'opsz' 100" }}>No.1</span>
+        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: "6.5%", right: "6.5%", top: 248, textAlign: "right", fontVariationSettings: "'opsz' 100" }}>VerticaL Magazine</span>
         {/* 沖永良部 — 49px, vertical, letter-spacing for wide character spacing */}
         <div className="absolute" style={{ left: 0, right: 0, top: 362, display: "flex", justifyContent: "center" }}>
           <span className="vertical-rl text-white" style={{ fontSize: 49, fontWeight: 500, letterSpacing: "0.66em" }}>沖永良部</span>
@@ -119,16 +119,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ━━━ 3. ARTICLE 1 + HERO PHOTO ━━━ */}
-      <section className="bg-white" style={{ padding: "48px 36px 0" }}>
-        <h2 style={headingText}>4年ぶり3回目のえらぶ</h2>
-        <div style={{ ...bodyText, marginTop: 62 }}>
-          <p>2026年の3月。東京では開花宣言が出ているが、まだ肌寒い。えらぶゆりの島空港に降り立った時は小雨だったが、南国特有のむわっとした</p>
-        </div>
-      </section>
-      {/* ヒーロー写真エリア（Figmaスクショ使用） */}
+      {/* ━━━ 3. ARTICLE 1 + HERO PHOTO（画像に統合） ━━━ */}
       <section className="relative w-full bg-white">
-        <Image src="/images/section2.png" alt="ヒーロー写真" width={778} height={920} className="w-full h-auto" />
+        <Image src="/images/section2.png" alt="4年ぶり3回目のえらぶ" width={642} height={1182} className="w-full h-auto" />
       </section>
       <section className="bg-white" style={{ padding: "0 36px 48px" }}>
         <div style={bodyText}>
@@ -326,19 +319,18 @@ export default function Home() {
         <div style={{ ...bodyText, padding: "32px 36px" }}>
           <p>そして、もはやこれくらいじゃ驚かない、存命の人物の銅像である。旧ソ連圏を旅した時によく見たなあ。学生運動や組合活動に熱心だった人が島に集まるという話を聞き、何かを過剰に接続したくなったのであった。やっぱりまた来るかもしれない</p>
         </div>
-      </section>
-
-      {/* ━━━ 15. 編集後記 (水色背景 + 上部に波線) ━━━ */}
-      <section style={{ background: "#77DBF1", padding: "0 0 56px" }}>
-        <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none">
-          <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V0H0Z" fill="white" />
-        </svg>
-        <div style={{ padding: "48px 36px 0" }}>
-        <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
-        <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
-          縦型スクロールの形式で、画像も映像もテキストも楽しめればいいのに。という思いつきでつくってみたら、なんだか楽しかったので、またやるかもしれない。旅の時とか、登山の時とか。本編は、いわゆるガイドブック的なものと情報がかぶるので、コラムの方が楽しいのもまた発見であった。またいつか、どこかでお会いしましょう。
-        </p>
-        <p className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em", textAlign: "right", marginTop: 32 }}>Paul.</p>
+        {/* ━━━ 15. 編集後記 (波線+水色背景を同一セクション内に配置して隙間を根絶) ━━━ */}
+        <div style={{ background: "#77DBF1", paddingBottom: 56 }}>
+          <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none">
+            <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V0H0Z" fill="white" />
+          </svg>
+          <div style={{ padding: "48px 36px 0" }}>
+            <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
+            <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
+              縦型スクロールの形式で、画像も映像もテキストも楽しめればいいのに。という思いつきでつくってみたら、なんだか楽しかったので、またやるかもしれない。旅の時とか、登山の時とか。本編は、いわゆるガイドブック的なものと情報がかぶるので、コラムの方が楽しいのもまた発見であった。またいつか、どこかでお会いしましょう。
+            </p>
+            <p className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em", textAlign: "right", marginTop: 32 }}>Paul.</p>
+          </div>
         </div>
       </section>
 
