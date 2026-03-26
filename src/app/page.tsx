@@ -219,7 +219,7 @@ export default function Home() {
           <div className="relative" style={{ width: "33.33%", height: 158 }}><Image src="/images/oke-80.jpg" alt="西郷2" fill className="object-cover" /></div>
           <div className="relative" style={{ width: "33.34%", height: 158 }}><Image src="/images/oke-87.jpg" alt="西郷3" fill className="object-cover" /></div>
         </div>
-        <p className="absolute font-baoli text-white" style={{ fontSize: 18, fontWeight: 400, lineHeight: "1.6em", letterSpacing: "0.1em", left: 36, right: 42, top: 420 }}>
+        <p className="absolute font-baoli text-white" style={{ fontSize: 18, fontWeight: 400, lineHeight: "1.6em", letterSpacing: "0.1em", left: 40, right: 38, top: 420 }}>
           西郷隆盛は島津久光の怒りに触れて沖永良部へと流罪となる.その際に飢饉を乗り切るための貯蔵庫の起案など島の発展に寄与した.この時期に大量の書物を読み,「敬天愛人」の思想に辿り着いたとされる.
         </p>
       </section>
