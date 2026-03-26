@@ -132,14 +132,11 @@ export default function Home() {
       {/* ━━━ 5. 基本情報 (Figmaスクショ画像を使用) ━━━ */}
       <section className="relative w-full">
         <Image src="/images/スクリーンショット 2026-03-25 22.42.54.png" alt="沖永良部島 基本情報" width={393} height={852} className="w-full h-auto" />
-      </section>
-
-      {/* ━━━ Wave: 基本情報 → えらぶメシ (light blue) ━━━ */}
-      <div style={{ background: "#77DBF1" }}>
-        <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none">
-          <path d="M0 0C20 28 50 38 80 30C110 22 130 8 160 12C190 16 210 32 240 36C270 40 300 28 330 18C355 10 375 20 393 14V40H0Z" fill="white" />
+        {/* Wave: 基本情報 → えらぶメシ — overflow:visibleで白を2px下に溢れさせ隙間を覆う */}
+        <svg viewBox="0 0 393 40" className="w-full block" preserveAspectRatio="none" overflow="visible" style={{ background: "#77DBF1" }}>
+          <path d="M0 0C20 28 50 38 80 30C110 22 130 8 160 12C190 16 210 32 240 36C270 40 300 28 330 18C355 10 375 20 393 14V42H0Z" fill="white" />
         </svg>
-      </div>
+      </section>
 
       {/* ━━━ 7. えらぶメシ (全て横スクロール) ━━━ */}
       <section className="bg-white">
@@ -278,19 +275,13 @@ export default function Home() {
         <h2 style={{ fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: 22, fontWeight: 500, color: "#fff", letterSpacing: "0.3em", lineHeight: "1.8em" }}>映像でふりかえる<br />沖永良部旅</h2>
       </section>
 
-      {/* ━━━ 13. VIDEO SECTION (縦長・タップで再生) ━━━ */}
+      {/* ━━━ 13. VIDEO SECTION (Google Drive埋め込み) ━━━ */}
       <section className="relative" style={{ width: "100%", height: 700, overflow: "hidden" }}>
-        <video
-          ref={videoRef}
-          src="/videos/oke3.mp4"
-          muted loop playsInline
-          poster=""
-          onClick={() => { if (videoRef.current) { if (videoRef.current.paused) { videoRef.current.play(); } else { videoRef.current.pause(); } } }}
-          style={{ width: "100%", height: "100%", display: "block", objectFit: "cover", cursor: "pointer" }}
+        <iframe
+          src="https://drive.google.com/file/d/1BZKbGtlXllYH-G3mxFZDIAdr8dU4xI5Z/preview"
+          allow="autoplay"
+          style={{ width: "100%", height: "100%", border: "none", display: "block" }}
         />
-        <button onClick={toggleMute} className="absolute bottom-4 right-4 bg-white/20 text-white rounded-full w-10 h-10 flex items-center justify-center text-sm backdrop-blur-sm" style={{ zIndex: 2 }} aria-label={isMuted ? "音声をオンにする" : "音声をオフにする"}>
-          {isMuted ? "\u{1F507}" : "\u{1F50A}"}
-        </button>
       </section>
 
       {/* ━━━ 14. 山田グループ研究日誌 ━━━ */}
