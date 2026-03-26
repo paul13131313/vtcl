@@ -61,7 +61,7 @@ export default function Home() {
   };
 
   /* テキスト共通スタイル */
-  const bodyText = { fontSize: 20, fontWeight: 300 as const, lineHeight: "2.3em" };
+  const bodyText = { fontSize: 20, fontWeight: 300 as const, lineHeight: "2.3em", textAlign: "justify" as const };
   const headingText = { fontSize: 22, fontWeight: 500 as const, lineHeight: "2.09em" };
   const caveText = { fontFamily: "'Barlow Semi Condensed', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400 as const, lineHeight: "1.79em", letterSpacing: "0.15em" };
 
