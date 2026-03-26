@@ -264,7 +264,7 @@ export default function Home() {
           <div className="absolute inset-0" style={{ background: "rgba(255,255,255,0.45)" }} />
         </div>
         {/* コンテンツ */}
-        <div className="relative" style={{ padding: "32px 26px 48px" }}>
+        <div className="relative" style={{ padding: "32px 24px 48px 28px" }}>
           <h2 className="font-baoli" style={{ fontSize: 50, fontWeight: 500, lineHeight: "1em" }}>君はどのあざ</h2>
           <p style={{ fontSize: 20, fontWeight: 500, lineHeight: "1.5em", letterSpacing: "0.03em", marginTop: 16 }}>ネルソンの生業はライターであり、沖永良部にルーツをもつ奄美群島出身者でもある。そのルーツを活かして郷土を継承していく活動に取り組んでおり、そのひとつが、この「あざシール」である。あざとは「字」と書き、町内の単位のひとつ。出身県や出身学校に愛のある人はたくさんいると思うが、字に愛のある人もたくさんいる。その気持ちを表明できるのがあざシールなのだ。あなたにとっての字は何にあたるのだろうか。筆者にとっての字は、学生時代の人力飛行機サークルだろうなあ、などと思いました。</p>
         </div>
@@ -275,13 +275,19 @@ export default function Home() {
         <h2 style={{ fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: 22, fontWeight: 500, color: "#fff", letterSpacing: "0.3em", lineHeight: "1.8em" }}>映像でふりかえる<br />沖永良部旅</h2>
       </section>
 
-      {/* ━━━ 13. VIDEO SECTION (Google Drive埋め込み) ━━━ */}
-      <section className="relative" style={{ width: "100%", height: 700, overflow: "hidden" }}>
-        <iframe
-          src="https://drive.google.com/file/d/1BZKbGtlXllYH-G3mxFZDIAdr8dU4xI5Z/preview"
-          allow="autoplay"
-          style={{ width: "100%", height: "100%", border: "none", display: "block" }}
-        />
+      {/* ━━━ 13. VIDEO SECTION (タップで再生) ━━━ */}
+      <section className="relative" style={{ width: "100%", height: 700, overflow: "hidden", cursor: "pointer" }}
+        onClick={(e) => {
+          const section = e.currentTarget;
+          section.innerHTML = '<iframe src="https://drive.google.com/file/d/1BZKbGtlXllYH-G3mxFZDIAdr8dU4xI5Z/preview" allow="autoplay" style="width:100%;height:100%;border:none;display:block"></iframe>';
+        }}
+      >
+        <Image src="/images/oke-236.jpg" alt="映像サムネイル" fill className="object-cover" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,0.85)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 0, height: 0, borderLeft: "22px solid #333", borderTop: "14px solid transparent", borderBottom: "14px solid transparent", marginLeft: 4 }} />
+          </div>
+        </div>
       </section>
 
       {/* ━━━ 14. 山田グループ研究日誌 ━━━ */}
