@@ -100,7 +100,7 @@ export default function Home() {
 
       {/* ━━━ 1. COVER (393×852) ━━━ */}
       <section className="relative w-full overflow-hidden" style={{ height: 852 }}>
-        <div className="absolute" style={{ left: -87, top: 0, width: 568, height: 852 }}>
+        <div className="absolute" style={{ left: "50%", top: 0, width: 568, height: 852, transform: "translateX(-50%)" }}>
           <Image src="/images/oke-236.jpg" alt="沖永良部島の海" fill className="object-cover" priority />
         </div>
         {/* VTCL — Imbue 271px, optical size 100 for thin strokes */}
