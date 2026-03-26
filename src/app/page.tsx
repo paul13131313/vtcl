@@ -68,10 +68,16 @@ export default function Home() {
   /* パスワード画面 */
   if (!isUnlocked) {
     return (
-      <div className="max-w-[393px] mx-auto bg-black flex flex-col items-center justify-center" style={{ fontFamily: "'Noto Sans JP', sans-serif", minHeight: "100dvh" }}>
-        <h1 className="text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 80, fontWeight: 400, fontVariationSettings: "'opsz' 100", letterSpacing: "0.05em" }}>VTCL</h1>
-        <p className="text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 14, fontWeight: 400, fontVariationSettings: "'opsz' 100", marginTop: 4, opacity: 0.6 }}>VerticaL Magazine</p>
+      <div className="max-w-[393px] mx-auto flex flex-col items-center justify-center relative overflow-hidden" style={{ fontFamily: "'Noto Sans JP', sans-serif", minHeight: "100dvh" }}>
+        <div className="absolute inset-0">
+          <Image src="/images/oke-236.jpg" alt="" fill className="object-cover" priority />
+          <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
+        </div>
+        <h1 className="text-white relative" style={{ fontFamily: "'Imbue', serif", fontSize: 80, fontWeight: 400, fontVariationSettings: "'opsz' 100", letterSpacing: "0.05em", zIndex: 1 }}>VTCL</h1>
+        <p className="text-white relative" style={{ fontFamily: "'Imbue', serif", fontSize: 14, fontWeight: 400, fontVariationSettings: "'opsz' 100", marginTop: 4, opacity: 0.6, zIndex: 1 }}>VerticaL Magazine</p>
         <form
+          className="relative"
+          style={{ zIndex: 1 }}
           onSubmit={(e) => { e.preventDefault(); if (pw === "yamada") { setIsUnlocked(true); setPwError(false); } else { setPwError(true); } }}
           style={{ marginTop: 48, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}
         >
