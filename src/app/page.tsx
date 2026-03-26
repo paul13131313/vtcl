@@ -275,15 +275,15 @@ export default function Home() {
         <h2 style={{ fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: 22, fontWeight: 500, color: "#fff", letterSpacing: "0.3em", lineHeight: "1.8em" }}>映像でふりかえる<br />沖永良部旅</h2>
       </section>
 
-      {/* ━━━ 13. VIDEO SECTION (タップでDriveを開く) ━━━ */}
-      <a href="https://drive.google.com/file/d/1BZKbGtlXllYH-G3mxFZDIAdr8dU4xI5Z/view" target="_blank" rel="noopener noreferrer" className="relative block" style={{ width: "100%", height: 700, overflow: "hidden" }}>
-        <Image src="/images/oke-236.jpg" alt="映像サムネイル" fill className="object-cover" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,0.85)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <div style={{ width: 0, height: 0, borderLeft: "22px solid #333", borderTop: "14px solid transparent", borderBottom: "14px solid transparent", marginLeft: 4 }} />
-          </div>
-        </div>
-      </a>
+      {/* ━━━ 13. VIDEO SECTION (YouTube Shorts埋め込み・黒帯なし) ━━━ */}
+      <div style={{ width: "100%", height: 700, overflow: "hidden", background: "#000", position: "relative" }}>
+        <iframe
+          src="https://www.youtube.com/embed/DzYvzqN-XWw?controls=1&modestbranding=1&rel=0&playsinline=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "300%", height: "100%", border: "none" }}
+        />
+      </div>
 
       {/* ━━━ 14. 山田グループ研究日誌 ━━━ */}
       <section className="bg-white">
