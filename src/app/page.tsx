@@ -68,7 +68,7 @@ export default function Home() {
   /* パスワード画面 */
   if (!isUnlocked) {
     return (
-      <div className="max-w-[393px] mx-auto flex flex-col items-center justify-center relative overflow-hidden" style={{ fontFamily: "'Noto Sans JP', sans-serif", minHeight: "100dvh" }}>
+      <div className="w-full max-w-[393px] mx-auto flex flex-col items-center justify-center relative overflow-hidden" style={{ fontFamily: "'Noto Sans JP', sans-serif", minHeight: "100dvh" }}>
         <div className="absolute inset-0">
           <Image src="/images/oke-236.jpg" alt="" fill className="object-cover" priority />
           <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.4)" }} />
@@ -77,9 +77,8 @@ export default function Home() {
         <p className="text-white relative" style={{ fontFamily: "'Imbue', serif", fontSize: 14, fontWeight: 400, fontVariationSettings: "'opsz' 100", marginTop: 4, opacity: 0.6, zIndex: 1 }}>VerticaL Magazine</p>
         <form
           className="relative"
-          style={{ zIndex: 1 }}
           onSubmit={(e) => { e.preventDefault(); if (pw === "yamada") { setIsUnlocked(true); setPwError(false); } else { setPwError(true); } }}
-          style={{ marginTop: 48, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}
+          style={{ zIndex: 1, marginTop: 48, display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}
         >
           <input
             type="password"
@@ -96,19 +95,19 @@ export default function Home() {
   }
 
   return (
-    <div className="max-w-[393px] mx-auto bg-white" style={{ fontFamily: "'Noto Sans JP', sans-serif", overflowX: "hidden" }}>
+    <div className="w-full max-w-[393px] mx-auto bg-white" style={{ fontFamily: "'Noto Sans JP', sans-serif", overflowX: "hidden" }}>
 
       {/* ━━━ 1. COVER (393×852) ━━━ */}
       <section className="relative w-full overflow-hidden" style={{ height: 852 }}>
-        <div className="absolute" style={{ left: "50%", top: 0, width: 568, height: 852, transform: "translateX(-50%)" }}>
-          <Image src="/images/oke-236.jpg" alt="沖永良部島の海" fill className="object-cover" priority />
+        <div className="absolute inset-0">
+          <Image src="/images/oke-236.jpg" alt="沖永良部島の海" fill className="object-cover" style={{ objectPosition: "center" }} priority />
         </div>
-        {/* VTCL — Imbue 271px, optical size 100 for thin strokes */}
-        <h1 className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 271, fontWeight: 400, left: 28, top: 1, lineHeight: "1.2em", fontVariationSettings: "'opsz' 100" }}>VTCL</h1>
+        {/* VTCL — レスポンシブフォントサイズ、センタリングで左右余白均等 */}
+        <h1 className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: "min(271px, 68.7vw)", fontWeight: 400, left: 0, right: 0, top: 1, lineHeight: "1.2em", textAlign: "center", fontVariationSettings: "'opsz' 100" }}>VTCL</h1>
         <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 28, top: 37, fontVariationSettings: "'opsz' 100" }}>2026</span>
-        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 358, top: 37, fontVariationSettings: "'opsz' 100" }}>4</span>
-        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 29, top: 257, fontVariationSettings: "'opsz' 100" }}>No.1</span>
-        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 28, top: 257, width: 338, textAlign: "right", fontVariationSettings: "'opsz' 100" }}>VerticaL Magazine</span>
+        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, right: 28, top: 37, fontVariationSettings: "'opsz' 100" }}>4</span>
+        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 28, top: 257, fontVariationSettings: "'opsz' 100" }}>No.1</span>
+        <span className="absolute text-white" style={{ fontFamily: "'Imbue', serif", fontSize: 24, fontWeight: 400, left: 28, right: 28, top: 257, textAlign: "right", fontVariationSettings: "'opsz' 100" }}>VerticaL Magazine</span>
         {/* 沖永良部 — 49px, vertical, letter-spacing for wide character spacing */}
         <div className="absolute" style={{ left: 0, right: 0, top: 362, display: "flex", justifyContent: "center" }}>
           <span className="vertical-rl text-white" style={{ fontSize: 49, fontWeight: 500, letterSpacing: "0.66em" }}>沖永良部</span>
@@ -124,7 +123,7 @@ export default function Home() {
       <section className="bg-white" style={{ padding: "48px 36px 0" }}>
         <h2 style={headingText}>4年ぶり3回目のえらぶ</h2>
         <div style={{ ...bodyText, marginTop: 62 }}>
-          <p>2026年の3月。東京では開花宣言が<br />出ているが、まだ肌寒い。えらぶゆ<br />りの島空港に降り立った時は小雨だ<br />ったが、南国特有のむわっとした</p>
+          <p>2026年の3月。東京では開花宣言が出ているが、まだ肌寒い。えらぶゆりの島空港に降り立った時は小雨だったが、南国特有のむわっとした</p>
         </div>
       </section>
       {/* ヒーロー写真エリア（Figmaスクショ使用） */}
@@ -220,7 +219,7 @@ export default function Home() {
           <div className="relative" style={{ width: "33.33%", height: 158 }}><Image src="/images/oke-80.jpg" alt="西郷2" fill className="object-cover" /></div>
           <div className="relative" style={{ width: "33.34%", height: 158 }}><Image src="/images/oke-87.jpg" alt="西郷3" fill className="object-cover" /></div>
         </div>
-        <p className="absolute font-baoli text-white" style={{ fontSize: 18, fontWeight: 400, lineHeight: "1.6em", letterSpacing: "0.1em", left: 39, right: 39, top: 420 }}>
+        <p className="absolute font-baoli text-white" style={{ fontSize: 18, fontWeight: 400, lineHeight: "1.6em", letterSpacing: "0.1em", left: 36, right: 42, top: 420 }}>
           西郷隆盛は島津久光の怒りに触れて沖永良部へと流罪となる.その際に飢饉を乗り切るための貯蔵庫の起案など島の発展に寄与した.この時期に大量の書物を読み,「敬天愛人」の思想に辿り着いたとされる.
         </p>
       </section>
@@ -330,12 +329,10 @@ export default function Home() {
       </section>
 
       {/* ━━━ 15. 編集後記 (水色背景 + 上部に波線) ━━━ */}
-      <section style={{ background: "white" }}>
-        <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none" style={{ background: "#77DBF1" }}>
+      <section style={{ background: "#77DBF1", padding: "0 0 56px" }}>
+        <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none">
           <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V0H0Z" fill="white" />
         </svg>
-      </section>
-      <section style={{ background: "#77DBF1", padding: "0 0 56px" }}>
         <div style={{ padding: "48px 36px 0" }}>
         <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
         <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
