@@ -37,11 +37,11 @@ const foodItems = [
 
 /* ━━━ スポット写真 ━━━ */
 const spotPhotos = [
-  { src: "/images/oke-236.jpg", name: "フーチャ", w: 165, h: 262 },
-  { src: "/images/oke-257.jpg", name: "越山展望所", w: 175, h: 262 },
-  { src: "/images/oke-127.jpg", name: "ひみつのビーチ", w: 175, h: 262 },
-  { src: "/images/oke-58.jpg", name: "田皆岬", w: 345, h: 262 },
-  { src: "/images/oke-47.jpg", name: "アーニマガヤトゥール墓", w: 173, h: 262 },
+  { src: "/images/oke-236.jpg", name: "フーチャ", w: 165, h: 262, color: "#b325f6" },
+  { src: "/images/oke-257.jpg", name: "越山展望所", w: 175, h: 262, color: "#1701f5" },
+  { src: "/images/oke-127.jpg", name: "ひみつのビーチ", w: 175, h: 262, color: "#90d9ee" },
+  { src: "/images/oke-58.jpg", name: "田皆岬", w: 345, h: 262, color: "#75fb55" },
+  { src: "/images/oke-47.jpg", name: "アーニマガヤ\nトゥール墓", w: 173, h: 262, color: "#f2a53a" },
 ];
 
 
@@ -221,18 +221,18 @@ export default function Home() {
       <section className="bg-white">
         <h2 style={{ fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: 26, fontWeight: 500, letterSpacing: "0.61em", textAlign: "center", padding: "4px 0 40px" }}>えらぶ名所めぐり</h2>
         <div className="relative w-full" style={{ height: 261 }}>
-          <Image src="/images/スクリーンショット 2026-03-25 22.43.28.png" alt="沖永良部島マップ" fill className="object-cover" />
+          <Image src="/images/map.png" alt="沖永良部島マップ" fill className="object-cover" />
         </div>
         {/* ガジュマル + スポット写真 — 横スクロール（次の写真が少し見える） */}
         <div className="gallery-scroll flex" style={{ gap: 0 }}>
           <div className="flex-shrink-0 relative" style={{ width: 345, height: 262 }}>
             <Image src="/images/oke-220.jpg" alt="ガジュマル" fill className="object-cover" />
-            <p className="absolute text-white" style={{ fontFamily: "'Zen Kaku Gothic New'", fontSize: 12, fontWeight: 500, letterSpacing: "0.41em", top: 9, left: 14 }}>国頭小学校のガジュマル</p>
+            <p className="absolute text-white flex items-center" style={{ fontFamily: "'Zen Kaku Gothic New'", fontSize: 12, fontWeight: 500, letterSpacing: "0.41em", top: 9, left: 14 }}>国頭小学校のガジュマル<span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: "#ea3368", marginLeft: 8, flexShrink: 0 }} /></p>
           </div>
           {spotPhotos.map((spot, i) => (
             <div key={i} className="flex-shrink-0 relative" style={{ width: Math.min(spot.w, 345), height: spot.h }}>
               <Image src={spot.src} alt={spot.name} fill className="object-cover" />
-              <p className="absolute bottom-2 left-2 text-white" style={{ fontFamily: "'Zen Kaku Gothic New'", fontSize: 12, fontWeight: 500, letterSpacing: "0.41em" }}>{spot.name}</p>
+              <p className="absolute bottom-2 left-2 text-white" style={{ fontFamily: "'Zen Kaku Gothic New'", fontSize: 12, fontWeight: 500, letterSpacing: "0.41em", whiteSpace: "pre-line" }}>{spot.name}<span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: spot.color, marginLeft: 8, verticalAlign: "middle" }} /></p>
             </div>
           ))}
         </div>
