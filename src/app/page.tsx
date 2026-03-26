@@ -61,7 +61,7 @@ export default function Home() {
   };
 
   /* テキスト共通スタイル */
-  const bodyText = { fontSize: 20, fontWeight: 300 as const, lineHeight: "2.3em", textAlign: "justify" as const };
+  const bodyText = { fontSize: 20, fontWeight: 300 as const, lineHeight: "2.3em" };
   const headingText = { fontSize: 22, fontWeight: 500 as const, lineHeight: "2.09em" };
   const caveText = { fontFamily: "'Barlow Semi Condensed', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400 as const, lineHeight: "1.79em", letterSpacing: "0.15em" };
 
@@ -124,7 +124,7 @@ export default function Home() {
       <section className="bg-white" style={{ padding: "48px 36px 0" }}>
         <h2 style={headingText}>4年ぶり3回目のえらぶ</h2>
         <div style={{ ...bodyText, marginTop: 62 }}>
-          <p>2026年の3月。東京では開花宣言が出ているが、まだ肌寒い。えらぶゆりの島空港に降り立った時は小雨だったが、南国特有のむわっとした</p>
+          <p>2026年の3月。東京では開花宣言が<br />出ているが、まだ肌寒い。えらぶゆ<br />りの島空港に降り立った時は小雨だ<br />ったが、南国特有のむわっとした</p>
         </div>
       </section>
       {/* ヒーロー写真エリア（Figmaスクショ使用） */}
