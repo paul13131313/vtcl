@@ -96,7 +96,7 @@ export default function Home() {
   }
 
   return (
-    <div className="max-w-[393px] mx-auto bg-white overflow-hidden" style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
+    <div className="max-w-[393px] mx-auto bg-white" style={{ fontFamily: "'Noto Sans JP', sans-serif", overflowX: "hidden" }}>
 
       {/* ━━━ 1. COVER (393×852) ━━━ */}
       <section className="relative w-full overflow-hidden" style={{ height: 852 }}>
@@ -209,10 +209,10 @@ export default function Home() {
         <div className="absolute" style={{ left: -22, top: 0, width: 437, height: 656 }}>
           <Image src="/images/oke-71.jpg" alt="沖永良部の風景" fill className="object-cover" />
         </div>
-        <p className="absolute font-baoli text-white" style={{ fontSize: 26, fontWeight: 400, letterSpacing: "0.15em", lineHeight: "0.96em", left: 0, right: 0, top: 27, textAlign: "center" }}>column</p>
-        <h3 className="absolute font-baoli text-white" style={{ fontSize: 45, fontWeight: 400, letterSpacing: "0.5em", lineHeight: "1.07em", textAlign: "center", left: 39, right: 39, top: 80 }}>
+        <p className="absolute font-baoli text-white" style={{ fontSize: 22, fontWeight: 400, letterSpacing: "0.3em", lineHeight: "1em", left: 0, right: 0, top: 30, textAlign: "center" }}>column</p>
+        <h3 className="absolute font-baoli text-white" style={{ fontSize: 40, fontWeight: 500, letterSpacing: "0.4em", lineHeight: "1.2em", textAlign: "center", left: 39, right: 39, top: 70 }}>
           西郷隆盛<br />
-          <span style={{ fontSize: 36, letterSpacing: "0.15em" }}>と</span><br />
+          <span style={{ fontSize: 32, letterSpacing: "0.15em" }}>と</span><br />
           沖永良部
         </h3>
         <div className="absolute flex" style={{ left: 39, right: 39, top: 239 }}>
@@ -220,7 +220,7 @@ export default function Home() {
           <div className="relative" style={{ width: "33.33%", height: 158 }}><Image src="/images/oke-80.jpg" alt="西郷2" fill className="object-cover" /></div>
           <div className="relative" style={{ width: "33.34%", height: 158 }}><Image src="/images/oke-87.jpg" alt="西郷3" fill className="object-cover" /></div>
         </div>
-        <p className="absolute font-baoli text-white" style={{ fontSize: 20, fontWeight: 400, lineHeight: "1.45em", letterSpacing: "0.15em", left: 39, right: 39, top: 422 }}>
+        <p className="absolute font-baoli text-white" style={{ fontSize: 18, fontWeight: 400, lineHeight: "1.6em", letterSpacing: "0.1em", left: 39, right: 39, top: 420 }}>
           西郷隆盛は島津久光の怒りに触れて沖永良部へと流罪となる.その際に飢饉を乗り切るための貯蔵庫の起案など島の発展に寄与した.この時期に大量の書物を読み,「敬天愛人」の思想に辿り着いたとされる.
         </p>
       </section>
@@ -276,11 +276,7 @@ export default function Home() {
         </div>
         {/* コンテンツ */}
         <div className="relative" style={{ padding: "32px 26px 48px" }}>
-          {/* タイトル（1行） + ・・ */}
-          <div style={{ position: "relative" }}>
-            <h2 className="font-baoli" style={{ fontSize: 55, fontWeight: 400, lineHeight: "1em", whiteSpace: "nowrap" }}>君はどのあざ？</h2>
-            <span className="font-baoli" style={{ fontSize: 46, fontWeight: 400, letterSpacing: "0.2em", position: "absolute", left: "60%", top: -14, color: "#000" }}>・・</span>
-          </div>
+          <h2 className="font-baoli" style={{ fontSize: 50, fontWeight: 500, lineHeight: "1em" }}>君はどのあざ</h2>
           <p style={{ fontSize: 20, fontWeight: 500, lineHeight: "1.5em", letterSpacing: "0.03em", marginTop: 16 }}>ネルソンの生業はライターであり、沖永良部にルーツをもつ奄美群島出身者でもある。そのルーツを活かして郷土を継承していく活動に取り組んでおり、そのひとつが、この「あざシール」である。あざとは「字」と書き、町内の単位のひとつ。出身県や出身学校に愛のある人はたくさんいると思うが、字に愛のある人もたくさんいる。その気持ちを表明できるのがあざシールなのだ。あなたにとっての字は何にあたるのだろうか。筆者にとっての字は、学生時代の人力飛行機サークルだろうなあ、などと思いました。</p>
         </div>
       </section>
@@ -334,10 +330,12 @@ export default function Home() {
       </section>
 
       {/* ━━━ 15. 編集後記 (水色背景 + 上部に波線) ━━━ */}
-      <section style={{ background: "#77DBF1", padding: "0 0 56px" }}>
-        <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none">
+      <section style={{ background: "white" }}>
+        <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none" style={{ background: "#77DBF1" }}>
           <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V0H0Z" fill="white" />
         </svg>
+      </section>
+      <section style={{ background: "#77DBF1", padding: "0 0 56px" }}>
         <div style={{ padding: "48px 36px 0" }}>
         <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
         <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
