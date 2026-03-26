@@ -275,34 +275,15 @@ export default function Home() {
         <h2 style={{ fontFamily: "'Zen Kaku Gothic New', sans-serif", fontSize: 22, fontWeight: 500, color: "#fff", letterSpacing: "0.3em", lineHeight: "1.8em" }}>映像でふりかえる<br />沖永良部旅</h2>
       </section>
 
-      {/* ━━━ 13. VIDEO SECTION (タップで再生) ━━━ */}
-      <section className="relative" style={{ width: "100%", height: 700, overflow: "hidden", cursor: "pointer" }}
-        onClick={(e) => {
-          const section = e.currentTarget;
-          const poster = section.querySelector('[data-poster]') as HTMLElement;
-          if (!poster) return;
-          const video = document.createElement('video');
-          video.src = 'https://drive.google.com/uc?export=download&id=1BZKbGtlXllYH-G3mxFZDIAdr8dU4xI5Z';
-          video.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block';
-          video.playsInline = true;
-          video.controls = true;
-          video.autoplay = true;
-          video.onerror = () => {
-            section.innerHTML = '<iframe src="https://drive.google.com/file/d/1BZKbGtlXllYH-G3mxFZDIAdr8dU4xI5Z/preview" allow="autoplay" style="width:100%;height:100%;border:none;display:block"></iframe>';
-          };
-          poster.style.display = 'none';
-          section.appendChild(video);
-        }}
-      >
-        <div data-poster="">
-          <Image src="/images/oke-236.jpg" alt="映像サムネイル" fill className="object-cover" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,0.85)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <div style={{ width: 0, height: 0, borderLeft: "22px solid #333", borderTop: "14px solid transparent", borderBottom: "14px solid transparent", marginLeft: 4 }} />
-            </div>
+      {/* ━━━ 13. VIDEO SECTION (タップでDriveを開く) ━━━ */}
+      <a href="https://drive.google.com/file/d/1BZKbGtlXllYH-G3mxFZDIAdr8dU4xI5Z/view" target="_blank" rel="noopener noreferrer" className="relative block" style={{ width: "100%", height: 700, overflow: "hidden" }}>
+        <Image src="/images/oke-236.jpg" alt="映像サムネイル" fill className="object-cover" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,255,255,0.85)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 0, height: 0, borderLeft: "22px solid #333", borderTop: "14px solid transparent", borderBottom: "14px solid transparent", marginLeft: 4 }} />
           </div>
         </div>
-      </section>
+      </a>
 
       {/* ━━━ 14. 山田グループ研究日誌 ━━━ */}
       <section className="bg-white">
@@ -330,19 +311,19 @@ export default function Home() {
         <div style={{ ...bodyText, padding: "32px 36px" }}>
           <p>そして、もはやこれくらいじゃ驚かない、存命の人物の銅像である。旧ソ連圏を旅した時によく見たなあ。学生運動や組合活動に熱心だった人が島に集まるという話を聞き、何かを過剰に接続したくなったのであった。やっぱりまた来るかもしれない</p>
         </div>
-        {/* ━━━ 15. 編集後記 (波線+水色背景を同一セクション内に配置して隙間を根絶) ━━━ */}
-        <div style={{ background: "#77DBF1", paddingBottom: 56 }}>
-          <svg viewBox="0 0 393 40" fill="none" className="w-full block" preserveAspectRatio="none">
-            <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V0H0Z" fill="white" />
-          </svg>
-          <div style={{ padding: "48px 36px 0" }}>
-            <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
-            <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
-              縦型スクロールの形式で、画像も映像もテキストも楽しめればいいのに。という思いつきでつくってみたら、なんだか楽しかったので、またやるかもしれない。旅の時とか、登山の時とか。本編は、いわゆるガイドブック的なものと情報がかぶるので、コラムの方が楽しいのもまた発見であった。またいつか、どこかでお会いしましょう。
-            </p>
-            <p className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em", textAlign: "right", marginTop: 32 }}>Paul.</p>
-          </div>
+        {/* ━━━ 15. 編集後記 — 波はSVG内に両色描画、背景色はdivではなく直後から ━━━ */}
+        <svg viewBox="0 0 393 40" className="w-full block" preserveAspectRatio="none" overflow="visible">
+          <rect x="0" y="0" width="393" height="42" fill="#77DBF1" />
+          <path d="M0 40C20 12 50 2 80 10C110 18 130 32 160 28C190 24 210 8 240 4C270 0 300 12 330 22C355 30 375 20 393 26V-2H0Z" fill="white" />
+        </svg>
+        <div style={{ background: "#77DBF1", padding: "48px 36px 0" }}>
+          <h2 className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em" }}>編集後記</h2>
+          <p style={{ fontFamily: "'Balthazar', 'Noto Sans JP', sans-serif", fontSize: 14, fontWeight: 400, lineHeight: "2.57em", marginTop: 16 }}>
+            縦型スクロールの形式で、画像も映像もテキストも楽しめればいいのに。という思いつきでつくってみたら、なんだか楽しかったので、またやるかもしれない。旅の時とか、登山の時とか。本編は、いわゆるガイドブック的なものと情報がかぶるので、コラムの方が楽しいのもまた発見であった。またいつか、どこかでお会いしましょう。
+          </p>
+          <p className="font-baoli" style={{ fontSize: 20, fontWeight: 400, lineHeight: "2.3em", textAlign: "right", marginTop: 32 }}>Paul.</p>
         </div>
+        <div style={{ background: "#77DBF1", height: 56 }} />
       </section>
 
       {/* ━━━ FOOTER ━━━ */}
